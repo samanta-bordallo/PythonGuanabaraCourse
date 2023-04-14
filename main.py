@@ -36,6 +36,22 @@ def media_notas():
     nota2 = int(input("Qual a sugunda nota? "))
     print(f'A média da nota é {(nota1 + nota2) / 2}')
 
+def metros():
+    metros = int(input("Me de um número"))
+    print(f'Então teremos para {metros} metro(s): {metros * 100} centímetros e {metros * 1000} milímetros')
+
+def tabuada():
+    numero_tabuada = 0
+    number_tabuada = int(input("Me de um número "))
+    print(f'A tabuada desse número é: \n')
+    while numero_tabuada < 10:
+        numero_tabuada += 1
+        print(f" {number_tabuada} * {numero_tabuada} = {number_tabuada * numero_tabuada}")
+
+def carteira():
+        quantia_dinheiro = float(input("Quantos reais você têm? "))
+        print(f'Esse valor de {quantia_dinheiro:.2f} R$ dá para comprar {quantia_dinheiro / 3.27:.2f} US$')
+
 # Menus
 def menu_world1():
     while True:
@@ -47,6 +63,9 @@ def menu_world1():
         print("5. Qual o antecessor")
         print("6. dobro")
         print("7. Media notas")
+        print("8. metros")
+        print("9. tabuada")
+        print('10. carteira')
         print("0. quit")
 
         world1_input = input("\nEnter your choice: ")
@@ -71,6 +90,15 @@ def menu_world1():
 
         elif world1_input == "7":
             media_notas()
+
+        elif world1_input == "8":
+            metros()
+
+        elif world1_input == "9":
+            tabuada()
+
+        elif world1_input == "10":
+            carteira()
 
         elif world1_input == "0":
             print("Goodbye")
