@@ -52,6 +52,20 @@ def carteira():
         quantia_dinheiro = float(input("Quantos reais você têm? "))
         print(f'Esse valor de {quantia_dinheiro:.2f} R$ dá para comprar {quantia_dinheiro / 3.27:.2f} US$')
 
+def tintas():
+    largura = float(input('Qual a largura da parede? '))
+    altura = float(input('Qual a altura da parede? '))
+    print(f'A área da sua parede é {largura * altura} m2, logo você vai precisar de {(largura * altura) / 2} latas de tinta')
+
+def desconto():
+    preco = float(input("Qual o valor do produto? "))
+    print(f"o novo valor do produto com 5% de desconto é: {preco * 0.95} R$")
+
+def salario():
+    salario = float(input('Qual o seu sálário? '))
+    print(f"Seu salário aumentou em 15%. Você passará a receber {salario * 1.15} R$")
+
+
 # Menus
 def menu_world1():
     while True:
@@ -66,6 +80,9 @@ def menu_world1():
         print("8. metros")
         print("9. tabuada")
         print('10. carteira')
+        print('11. Tintas')
+        print('12. Desconto')
+        print('13. Salário')
         print("0. quit")
 
         world1_input = input("\nEnter your choice: ")
@@ -99,6 +116,15 @@ def menu_world1():
 
         elif world1_input == "10":
             carteira()
+
+        elif world1_input == "11":
+            tintas()
+
+        elif world1_input == "12":
+            desconto()
+
+        elif world1_input == "13":
+            salario()
 
         elif world1_input == "0":
             print("Goodbye")
