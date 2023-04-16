@@ -32,12 +32,12 @@ def dobro():
     print(f'o dobro de {number2} é {number2 * 2}, o triplo é {number2 * 3} e a raiz quadrada é {number2 ** (1/2)}')
 
 def media_notas():
-    nota1 = int(input("Qual a primeira nota? "))
-    nota2 = int(input("Qual a sugunda nota? "))
+    nota1 = float(input("Qual a primeira nota? "))
+    nota2 = float(input("Qual a sugunda nota? "))
     print(f'A média da nota é {(nota1 + nota2) / 2}')
 
 def metros():
-    metros = int(input("Me de um número"))
+    metros = float(input("Me de um número"))
     print(f'Então teremos para {metros} metro(s): {metros * 100} centímetros e {metros * 1000} milímetros')
 
 def tabuada():
@@ -46,7 +46,7 @@ def tabuada():
     print(f'A tabuada desse número é: \n')
     while numero_tabuada < 10:
         numero_tabuada += 1
-        print(f" {number_tabuada} * {numero_tabuada} = {number_tabuada * numero_tabuada}")
+        print(f" {number_tabuada} x {numero_tabuada} = {number_tabuada * numero_tabuada}")
 
 def carteira():
         quantia_dinheiro = float(input("Quantos reais você têm? "))
@@ -64,6 +64,36 @@ def desconto():
 def salario():
     salario = float(input('Qual o seu sálário? '))
     print(f"Seu salário aumentou em 15%. Você passará a receber {salario * 1.15} R$")
+
+def graus():
+    grau = float(input("What's the temperature?"))
+    print(f"The temperature {grau}ªC corresponds to {grau * 1.8 + 32} ªF ")
+
+def car():
+    days = int(input("How many days was? "))
+    km = float(input("How many kilometers was? "))
+    print(f"You should pay {(days * 60) + (km * 0.15)} R$")
+
+import math
+def real_number():
+    number_real = float(input("Give me a number "))
+    print(f"The number {number_real} has the integer part {math.floor(number_real)}")
+
+def leg():
+    opposite_leg = float(input("What is the length of the opposite leg? "))
+    adjacent_leg = float(input("What is the length of the adjacent leg? "))
+    print(f"The hypotenuse will be {math.sqrt((opposite_leg ** 2) + (adjacent_leg ** 2))} ")
+
+def angle():
+    angle = float(input("Give me a angle"))
+    rad = math.radians(angle)
+    print(f"For this angle, we have {math.sin(rad):.2f} sine, {math.cos(rad):.2f} cosine and {math.tan(rad):.2f} tangent")
+
+def student():
+    student_group =
+    student_group += input("Writing the names of studantes ")
+    print(student_group)
+
 
 
 # Menus
@@ -83,6 +113,12 @@ def menu_world1():
         print('11. Tintas')
         print('12. Desconto')
         print('13. Salário')
+        print("14. Graus")
+        print("15. Car")
+        print("16. Real Number")
+        print("17. Legs")
+        print("18. Angle")
+        print("19. Random student")
         print("0. quit")
 
         world1_input = input("\nEnter your choice: ")
@@ -125,6 +161,24 @@ def menu_world1():
 
         elif world1_input == "13":
             salario()
+
+        elif world1_input == "14":
+            graus()
+
+        elif world1_input == "15":
+            car()
+
+        elif world1_input == "16":
+            real_number()
+
+        elif world1_input == "17":
+            leg()
+
+        elif world1_input == "18":
+            angle()
+
+        elif world1_input == "19":
+            student()
 
         elif world1_input == "0":
             print("Goodbye")
