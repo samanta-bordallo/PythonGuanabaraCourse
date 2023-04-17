@@ -1,4 +1,7 @@
 # Functions
+import random
+
+
 def hello():
     print("Hello, world")
 
@@ -90,10 +93,22 @@ def angle():
     print(f"For this angle, we have {math.sin(rad):.2f} sine, {math.cos(rad):.2f} cosine and {math.tan(rad):.2f} tangent")
 
 def student():
-    student_group =
-    student_group += input("Writing the names of studantes ")
-    print(student_group)
+    student1 = input("Writing the first name ")
+    student2 = input("Writing the second name ")
+    student3 = input("Writing the third name ")
+    student4 = input("Writing the fourth name ")
+    lista1 = [student1, student2, student3, student4]
+    random_student = random.choice(lista1)
+    print(f"The student choose was: {random_student}")
 
+def students_presentation():
+    student1 = input("Writing the first name ")
+    student2 = input("Writing the second name ")
+    student3 = input("Writing the third name ")
+    student4 = input("Writing the fourth name ")
+    lista1 = [student1, student2, student3, student4]
+    random.shuffle(lista1)
+    print(f"The order of presentation is: {lista1}")
 
 
 # Menus
@@ -119,6 +134,7 @@ def menu_world1():
         print("17. Legs")
         print("18. Angle")
         print("19. Random student")
+        print("20. Student presentation")
         print("0. quit")
 
         world1_input = input("\nEnter your choice: ")
@@ -179,6 +195,9 @@ def menu_world1():
 
         elif world1_input == "19":
             student()
+
+        elif world1_input == "20":
+            students_presentation()
 
         elif world1_input == "0":
             print("Goodbye")
