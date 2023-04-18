@@ -1,5 +1,11 @@
-# Functions
+import pygame
 import random
+import math
+
+pygame.init()
+
+
+# Functions
 
 
 def hello():
@@ -10,11 +16,13 @@ def interact():
     name = input("What is your name?")
     print(f"Hello, {name}, nice to meet you")
 
+
 def somatoria():
     number1 = int(input("Give me a number "))
     number2 = int(input("Give me another number"))
     result = number1 + number2
     print(f"{number1} + {number2} = {result}")
+
 
 def new_word():
     word = input("Digite algo: ")
@@ -26,22 +34,27 @@ def new_word():
     print(f"Está em minusculas? {str.islower(word)}")
     print(f"Está capitalizada? {str.istitle(word)}")
 
+
 def suc_ant():
     number = int(input('Diga um número '))
     print(f'O antecessor de {number} é {number - 1} e o sucessor é {number + 1}')
 
+
 def dobro():
     number2 = int(input('Diga um número '))
-    print(f'o dobro de {number2} é {number2 * 2}, o triplo é {number2 * 3} e a raiz quadrada é {number2 ** (1/2)}')
+    print(f'o dobro de {number2} é {number2 * 2}, o triplo é {number2 * 3} e a raiz quadrada é {number2 ** (1 / 2)}')
+
 
 def media_notas():
     nota1 = float(input("Qual a primeira nota? "))
     nota2 = float(input("Qual a sugunda nota? "))
     print(f'A média da nota é {(nota1 + nota2) / 2}')
 
+
 def metros():
-    metros = float(input("Me de um número"))
-    print(f'Então teremos para {metros} metro(s): {metros * 100} centímetros e {metros * 1000} milímetros')
+    metros1 = float(input("Me de um número"))
+    print(f'Então teremos para {metros1} metro(s): {metros1 * 100} centímetros e {metros1 * 1000} milímetros')
+
 
 def tabuada():
     numero_tabuada = 0
@@ -51,46 +64,59 @@ def tabuada():
         numero_tabuada += 1
         print(f" {number_tabuada} x {numero_tabuada} = {number_tabuada * numero_tabuada}")
 
+
 def carteira():
-        quantia_dinheiro = float(input("Quantos reais você têm? "))
-        print(f'Esse valor de {quantia_dinheiro:.2f} R$ dá para comprar {quantia_dinheiro / 3.27:.2f} US$')
+    quantia_dinheiro = float(input("Quantos reais você têm? "))
+    print(f'Esse valor de {quantia_dinheiro:.2f} R$ dá para comprar {quantia_dinheiro / 3.27:.2f} US$')
+
 
 def tintas():
     largura = float(input('Qual a largura da parede? '))
     altura = float(input('Qual a altura da parede? '))
-    print(f'A área da sua parede é {largura * altura} m2, logo você vai precisar de {(largura * altura) / 2} latas de tinta')
+    print(
+        f'A área da sua parede é {largura * altura} m2, logo você vai precisar de '
+        f'{(largura * altura) / 2} latas de tinta')
+
 
 def desconto():
     preco = float(input("Qual o valor do produto? "))
     print(f"o novo valor do produto com 5% de desconto é: {preco * 0.95} R$")
 
+
 def salario():
-    salario = float(input('Qual o seu sálário? '))
-    print(f"Seu salário aumentou em 15%. Você passará a receber {salario * 1.15} R$")
+    salario1 = float(input('Qual o seu sálário? '))
+    print(f"Seu salário aumentou em 15%. Você passará a receber {salario1 * 1.15} R$")
+
 
 def graus():
     grau = float(input("What's the temperature?"))
     print(f"The temperature {grau}ªC corresponds to {grau * 1.8 + 32} ªF ")
+
 
 def car():
     days = int(input("How many days was? "))
     km = float(input("How many kilometers was? "))
     print(f"You should pay {(days * 60) + (km * 0.15)} R$")
 
-import math
+
 def real_number():
     number_real = float(input("Give me a number "))
     print(f"The number {number_real} has the integer part {math.floor(number_real)}")
+
 
 def leg():
     opposite_leg = float(input("What is the length of the opposite leg? "))
     adjacent_leg = float(input("What is the length of the adjacent leg? "))
     print(f"The hypotenuse will be {math.sqrt((opposite_leg ** 2) + (adjacent_leg ** 2))} ")
 
+
 def angle():
-    angle = float(input("Give me a angle"))
-    rad = math.radians(angle)
-    print(f"For this angle, we have {math.sin(rad):.2f} sine, {math.cos(rad):.2f} cosine and {math.tan(rad):.2f} tangent")
+    angle1 = float(input("Give me a angle"))
+    rad = math.radians(angle1)
+    print(
+        f"For this angle, we have {math.sin(rad):.2f} sine, {math.cos(rad):.2f} "
+        f"cosine and {math.tan(rad):.2f} tangent")
+
 
 def student():
     student1 = input("Writing the first name ")
@@ -101,6 +127,7 @@ def student():
     random_student = random.choice(lista1)
     print(f"The student choose was: {random_student}")
 
+
 def students_presentation():
     student1 = input("Writing the first name ")
     student2 = input("Writing the second name ")
@@ -109,6 +136,21 @@ def students_presentation():
     lista1 = [student1, student2, student3, student4]
     random.shuffle(lista1)
     print(f"The order of presentation is: {lista1}")
+
+
+def music():
+    pygame.init()
+    pygame.mixer.music.load("Fatality.mp3")
+
+    # # loop principal do programa
+    # while True:
+    #     # verifica se alguma tecla foi pressionada
+    #     for event in pygame.event.get():
+    #         if event.type == pygame.KEYDOWN:
+    #             # verifica se a tecla "P" foi pressionada
+    #             if event.key == K_RETURN:
+    #                 # toca a música
+    pygame.mixer.music.play()
 
 
 # Menus
@@ -135,6 +177,7 @@ def menu_world1():
         print("18. Angle")
         print("19. Random student")
         print("20. Student presentation")
+        print("21. Music")
         print("0. quit")
 
         world1_input = input("\nEnter your choice: ")
@@ -198,6 +241,9 @@ def menu_world1():
 
         elif world1_input == "20":
             students_presentation()
+
+        elif world1_input == "21":
+            music()
 
         elif world1_input == "0":
             print("Goodbye")
