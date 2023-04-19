@@ -141,16 +141,27 @@ def students_presentation():
 def music():
     pygame.init()
     pygame.mixer.music.load("Fatality.mp3")
-
-    # # loop principal do programa
-    # while True:
-    #     # verifica se alguma tecla foi pressionada
-    #     for event in pygame.event.get():
-    #         if event.type == pygame.KEYDOWN:
-    #             # verifica se a tecla "P" foi pressionada
-    #             if event.key == K_RETURN:
-    #                 # toca a música
     pygame.mixer.music.play()
+
+
+def fullname():
+    name = input("What's your name? ")
+    print(name.upper())
+    print(name.lower())
+    print(len(name) - name.count(" "))
+    first_name = name.split()
+    print(first_name[0])
+
+
+def digits():
+    while not 0 <= int(digit := input("Enter a number from 0 a 9999: ")) < 10000:
+        print('invalid number, try again!')
+    else:
+        digit = digit.rjust(4, '0')
+
+    thounsands, hundreds, tens, unit = digit
+
+    print(f'{unit=}, {tens=}, {hundreds=}, {thounsands=}')
 
 
 # Menus
@@ -178,6 +189,8 @@ def menu_world1():
         print("19. Random student")
         print("20. Student presentation")
         print("21. Music")
+        print("22. Full name")
+        print("23. Separate Digits")
         print("0. quit")
 
         world1_input = input("\nEnter your choice: ")
@@ -244,6 +257,12 @@ def menu_world1():
 
         elif world1_input == "21":
             music()
+
+        elif world1_input == "22":
+            fullname()
+
+        elif world1_input == "23":
+            digits()
 
         elif world1_input == "0":
             print("Goodbye")
