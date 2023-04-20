@@ -52,7 +52,7 @@ def media_notas():
 
 
 def metros():
-    metros1 = float(input("Me de um número"))
+    metros1 = float(input("Me de um número "))
     print(f'Então teremos para {metros1} metro(s): {metros1 * 100} centímetros e {metros1 * 1000} milímetros')
 
 
@@ -89,7 +89,7 @@ def salario():
 
 
 def graus():
-    grau = float(input("What's the temperature?"))
+    grau = float(input("What's the temperature? "))
     print(f"The temperature {grau}ªC corresponds to {grau * 1.8 + 32} ªF ")
 
 
@@ -111,7 +111,7 @@ def leg():
 
 
 def angle():
-    angle1 = float(input("Give me a angle"))
+    angle1 = float(input("Give me a angle "))
     rad = math.radians(angle1)
     print(
         f"For this angle, we have {math.sin(rad):.2f} sine, {math.cos(rad):.2f} "
@@ -164,6 +164,36 @@ def digits():
     print(f'{unit=}, {tens=}, {hundreds=}, {thounsands=}')
 
 
+def santo():
+    city = input("Tell me a city's name ")
+    word = "Santo"
+    if city.startswith(word):
+        print("the phrase start with the word", word)
+    else:
+        print("the phrase don't start with the word", word)
+
+
+def silva():
+    name_person2 = input("To digit your fullname ")
+    word = "Silva"
+    if word in name_person2:
+        print("The word", word, "is in the sentence")
+    else:
+        print("The word", word, "isn't in the sentence")
+
+
+def phrase_by_keyboard():
+    phrase = input("Give me a any sentence ")
+    letter = "a"
+    phrase = phrase.lower()
+    counter = 0
+    for character in phrase:
+        if character == letter:
+            counter += 1
+
+    print(f"The letter '{letter}' appears {counter} times in the sentence.")
+
+
 # Menus
 def menu_world1():
     while True:
@@ -191,6 +221,9 @@ def menu_world1():
         print("21. Music")
         print("22. Full name")
         print("23. Separate Digits")
+        print("24. Santo")
+        print("25. Silva")
+        print("26. Phrase by keyboard")
         print("0. quit")
 
         world1_input = input("\nEnter your choice: ")
@@ -263,6 +296,15 @@ def menu_world1():
 
         elif world1_input == "23":
             digits()
+
+        elif world1_input == "24":
+            santo()
+
+        elif world1_input == "25":
+            silva()
+
+        elif world1_input == "26":
+            phrase_by_keyboard()
 
         elif world1_input == "0":
             print("Goodbye")
