@@ -185,13 +185,30 @@ def silva():
 def phrase_by_keyboard():
     phrase = input("Give me a any sentence ")
     letter = "a"
-    phrase = phrase.lower()
+    phrase = phrase.lower().split()
     counter = 0
     for character in phrase:
         if character == letter:
             counter += 1
-
     print(f"The letter '{letter}' appears {counter} times in the sentence.")
+    index = phrase.find(letter)
+    if index != -1:
+        print(f"The letter '{letter}' first appears at position {index} in the sentence.")
+    else:
+        print(f"The letter '{letter}' was not found in the sentence.")
+    index = phrase.rfind(letter)
+    if index != -1:
+        print(f"The letter '{letter}' last appears at position {index} in the sentence.")
+    else:
+        print(f"The letter '{letter}' was not found in the sentence.")
+
+def first_last_name():
+    fullname2 = input("What's your fullname? ")
+    name_list = fullname2.split()
+    first_name = name_list[0]
+    last_name = name_list[-1]
+    print("First name:", first_name)
+    print("Last name:", last_name)
 
 
 # Menus
@@ -224,6 +241,7 @@ def menu_world1():
         print("24. Santo")
         print("25. Silva")
         print("26. Phrase by keyboard")
+        print("27. First Last Name")
         print("0. quit")
 
         world1_input = input("\nEnter your choice: ")
@@ -305,6 +323,9 @@ def menu_world1():
 
         elif world1_input == "26":
             phrase_by_keyboard()
+
+        elif world1_input == "27":
+            first_last_name()
 
         elif world1_input == "0":
             print("Goodbye")
