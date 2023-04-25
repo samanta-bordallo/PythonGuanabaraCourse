@@ -202,6 +202,7 @@ def phrase_by_keyboard():
     else:
         print(f"The letter '{letter}' was not found in the sentence.")
 
+
 def first_last_name():
     fullname2 = input("What's your fullname? ")
     name_list = fullname2.split()
@@ -211,7 +212,35 @@ def first_last_name():
     print("Last name:", last_name)
 
 
-# Menus
+def computer_number():
+    numbers = [0, 1, 2, 3, 4, 5]
+    number_of_computer = random.choice(numbers)
+    number_of_people = int(input("I thought of a number between 0 and 5, try to figure out what it was."))
+    if number_of_people == number_of_computer:
+        print("Congratulations, you got it right")
+    else:
+        print("Not this time. Try again")
+        computer_number()
+
+def car_speed():
+    speed = float(input("How fast is the car?"))
+    if speed > 80:
+        print("You have been fined")
+        surplus = speed - 80
+        print(f"Your fine is R${surplus * 7}")
+    else:
+        print(".")
+
+def even_or_odd():
+    whole_number = int(input("Give me a whole number "))
+    if whole_number % 2 == 0:
+        print("The number is even")
+    else:
+        print("The number is odd")
+
+
+
+    # Menus
 def menu_world1():
     while True:
         print("\nselect a function to run:")
@@ -242,6 +271,9 @@ def menu_world1():
         print("25. Silva")
         print("26. Phrase by keyboard")
         print("27. First Last Name")
+        print("28. Computer Number")
+        print("29. Car Speed")
+        print("30. Even or odd")
         print("0. quit")
 
         world1_input = input("\nEnter your choice: ")
@@ -326,6 +358,15 @@ def menu_world1():
 
         elif world1_input == "27":
             first_last_name()
+
+        elif world1_input == "28":
+            computer_number()
+
+        elif world1_input== "29":
+            car_speed()
+
+        elif world1_input == "30":
+            even_or_odd()
 
         elif world1_input == "0":
             print("Goodbye")
