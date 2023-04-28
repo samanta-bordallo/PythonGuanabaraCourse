@@ -222,6 +222,7 @@ def computer_number():
         print("Not this time. Try again")
         computer_number()
 
+
 def car_speed():
     speed = float(input("How fast is the car?"))
     if speed > 80:
@@ -231,6 +232,7 @@ def car_speed():
     else:
         print(".")
 
+
 def even_or_odd():
     whole_number = int(input("Give me a whole number "))
     if whole_number % 2 == 0:
@@ -239,8 +241,54 @@ def even_or_odd():
         print("The number is odd")
 
 
+def trip():
+    km = float(input("how many km is your trip?"))
+    if km <= 200:
+        print(f"Your trip will be cost {km * 0.50}")
+    else:
+        print(f"Your trip will be cost {km * 0.45}")
 
-    # Menus
+
+def leap_year():
+    year = int(input("Give me a year "))
+    if year % 4 == 0:
+        if year % 100 == 0 and year % 400 != 0:
+            print(f"The year {year} is not a leap year")
+        else:
+            print(f"The year {year} is a leap year")
+    else:
+        print(f"The year {year} is not a leap year")
+
+
+def highest_and_lowest():
+    numbers_1 = int(input("Give me the first number "))
+    numbers_2 = int(input("Give me the second number "))
+    numbers_3 = int(input("Give me the third number "))
+    maior = max(numbers_1, numbers_2, numbers_3)
+    menor = min(numbers_1, numbers_2, numbers_3)
+    print(f"The largest number is {maior} and the smallest number is {menor}")
+
+
+def salary_increase():
+    salary = float(input("What's your salary? "))
+    if salary > 1250:
+        print(f"Your new salary is {salary + (salary * 0.1)}")
+    else:
+        print(f"Your new salary is {salary + (salary * 0.15)}")
+
+
+def triangle():
+    line_1 = int(input("what is the length of the first straight line? "))
+    line_2 = int(input("what is the length of the second straight line? "))
+    line_3 = int(input("what is the length of the third straight line? "))
+    if line_1 < line_2 + line_3 and line_2 < line_1 + line_3 and line_3 < line_1 + line_2:
+        print(f"The lengths {line_1}, {line_2} and {line_3} form a triangle")
+    else:
+        print(f"The lengths {line_1}, {line_2} and {line_3} don't form a triangle")
+
+# Menus
+
+
 def menu_world1():
     while True:
         print("\nselect a function to run:")
@@ -274,6 +322,11 @@ def menu_world1():
         print("28. Computer Number")
         print("29. Car Speed")
         print("30. Even or odd")
+        print("31. Trip")
+        print("32. Leap year")
+        print("33. highest and lowest")
+        print("34. Salary")
+        print("35. Triangle")
         print("0. quit")
 
         world1_input = input("\nEnter your choice: ")
@@ -362,11 +415,26 @@ def menu_world1():
         elif world1_input == "28":
             computer_number()
 
-        elif world1_input== "29":
+        elif world1_input == "29":
             car_speed()
 
         elif world1_input == "30":
             even_or_odd()
+
+        elif world1_input == "31":
+            trip()
+
+        elif world1_input == "32":
+            leap_year()
+
+        elif world1_input == "33":
+            highest_and_lowest()
+
+        elif world1_input == "34":
+            salary_increase()
+
+        elif world1_input == "35":
+            triangle()
 
         elif world1_input == "0":
             print("Goodbye")
